@@ -1,0 +1,11 @@
+{
+  "name": "torena",
+  "version": "1.0.0",
+  "description": "Your personal trainer",
+  "main": "torena.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gwer",
+  "license": "MIT"
+}
