@@ -1,0 +1,57 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font: 18px/1.5rem sans-serif;
+}
+
+.main {
+    --gap: 8px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--gap);
+    margin: 20px;
+    max-width: 800px;
+}
+
+.date-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.date-form__label {
+
+}
+
+.date-form__field {
+
+}
+
+.train {
+    display: grid;
+}
+
+.train__date {
+    font-size: 1.6rem;
+    margin-bottom: calc(var(--gap) * 2);
+}
+
+.train__exercise {
+    display: grid;
+    grid-template-columns: 260px 140px;
+    grid-gap: var(--gap);
+    align-items: center;
+    padding: var(--gap);
+}
+
+.train__exercise:nth-of-type(2n) {
+    background-color: #eee;
+}
+
+.train__exercise-name {
+
+}
+
+.train__exercise-reps {
+    
+}
