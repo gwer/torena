@@ -1,7 +1,6 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const config = require('../config')
-const torena = require('../torena')
+const trainConfig = require('../config')
 
 const Train = require('./Train.js')
 const Datepick = require('./Datepick.js')
@@ -13,7 +12,7 @@ class Main extends React.Component {
         super(props)
         this.state = {
             date,
-            train: new torena(config, date)
+            trainConfig
         }
     }
 
@@ -21,7 +20,7 @@ class Main extends React.Component {
         return (
             <div className="main">
                 <Datepick date={this.state.date} onChange={this.onDateChange.bind(this)} />
-                <Train date={this.state.date} train={this.state.train} />
+                <Train date={this.state.date} config={this.state.trainConfig} />
             </div>
         )
     }
@@ -29,10 +28,11 @@ class Main extends React.Component {
     onDateChange(e) {
         const date = new Date(e.target.value)
 
-        this.setState({
-            date,
-            train: new torena(config, date)
-        })
+        this.setState(Object.assign(
+            {},
+            this.state,
+            { date }
+        ))
     }
 }
 

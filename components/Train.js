@@ -1,8 +1,10 @@
 const React = require('react')
+const torena = require('../torena')
 
 class Train extends React.Component {
     render() {
-        const flatTrain = this.props.train.sections
+        const train = new torena(this.props.config, this.props.date)
+        const flatTrain = train.sections
             .reduce((acc, section) => acc.concat(section.exercises), [])
 
         return (
