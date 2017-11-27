@@ -189,6 +189,24 @@ module.exports = {
                     step: 2,
                     priority: 1
                 },
+                {
+                    name: 'Сгибание рук в запястьях',
+                    reps: {
+                        min: 12,
+                        max: 16
+                    },
+                    step: 2,
+                    priority: 1
+                },
+                {
+                    name: 'Разгибание рук в запястьях',
+                    reps: {
+                        min: 12,
+                        max: 16
+                    },
+                    step: 2,
+                    priority: 1
+                },
             ],
             count: 2
         }
