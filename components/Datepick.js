@@ -1,29 +1,24 @@
-const React = require('react')
+const React = require('react');
 
-class Datepick extends React.Component {
-    render() {
-        const date = this.props.date
-        const day = twoDigits(date.getDate())
-        const month = twoDigits(date.getMonth() + 1)
-        const year = date.getFullYear()
+const Datepick = ({ date, onChange }) => {
+  const twoDigits = s => String(s).padStart(2, '0');
 
-        return (
-            <div className="date-form">
-                <div className="date-form__label">Выбери дату:</div>
-                <div className="date-form__field">
-                    <input
-                        type="date"
-                        value={`${year}-${month}-${day}`}
-                        onChange={this.props.onChange}
-                    />
-                </div>
-            </div>
-        )
+  const day = twoDigits(date.getDate());
+  const month = twoDigits(date.getMonth() + 1);
+  const year = date.getFullYear();
 
-        function twoDigits(s) {
-            return String(s).padStart(2, '0')
-        }
-    }
-}
+  return (
+    <div className="date-form">
+      <div className="date-form__label">Выбери дату:</div>
+      <div className="date-form__field">
+        <input
+          type="date"
+          value={`${year}-${month}-${day}`}
+          onChange={onChange}
+        />
+      </div>
+    </div>
+  );
+};
 
-module.exports = Datepick
+module.exports = Datepick;
